@@ -1,0 +1,8 @@
+{
+  "routes": {
+    "/gl-portfolio": {},
+    "/gl-portfolio/contact": {},
+    "/gl-portfolio/projects": {},
+    "/gl-portfolio/skills": {}
+  }
+}
