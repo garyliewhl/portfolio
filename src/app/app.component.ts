@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { HeroComponent } from './components/hero/hero.component';
+import { AboutComponent } from './components/about/about.component';
 import { SkillsetsComponent } from './components/skillsets/skillsets.component';
 import { ProjectsComponent } from './components/projects/projects.component';
 
@@ -11,7 +11,7 @@ import { ProjectsComponent } from './components/projects/projects.component';
   standalone: true,
   imports: [
     CommonModule,
-    HeroComponent,
+    AboutComponent,
     SkillsetsComponent,
     ProjectsComponent
   ]

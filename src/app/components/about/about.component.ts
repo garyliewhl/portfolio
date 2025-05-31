@@ -1,20 +1,21 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { AboutService } from '../../services/about.service';
 
 @Component({
   selector: 'app-about',
   templateUrl: './about.component.html',
   styleUrls: ['./about.component.scss'],
   standalone: true,
-  imports: [CommonModule]
+  imports: [CommonModule],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class AboutComponent {
-  aboutText: string = `I am a passionate Full Stack Developer with extensive experience in building modern web applications. 
-  With a strong foundation in both frontend and backend technologies, I specialize in creating scalable, 
-  efficient, and user-friendly solutions. My approach combines technical expertise with creative problem-solving 
-  to deliver exceptional digital experiences.`;
+export class AboutComponent implements OnInit {
+  aboutData: any;
 
-  experience: number = 5; // Years of experience
-  completedProjects: number = 20;
-  satisfiedClients: number = 15;
+  constructor(private aboutService: AboutService) {}
+
+  ngOnInit() {
+    this.aboutData = this.aboutService.getAboutData();
+  }
 }
