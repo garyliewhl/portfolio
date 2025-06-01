@@ -68,6 +68,7 @@ export class ProjectsComponent {
   ];
 
   isMobile = false;
+  activeProjectIndex: number | null = null;
   private isBrowser = false;
 
   constructor(@Inject(PLATFORM_ID) private platformId: Object) {
@@ -84,6 +85,12 @@ export class ProjectsComponent {
   private checkIfMobile() {
     if (this.isBrowser) {
       this.isMobile = window.innerWidth < 768;
+    }
+  }
+
+  toggleProject(index: number) {
+    if (this.isMobile) {
+      this.activeProjectIndex = this.activeProjectIndex === index ? null : index;
     }
   }
 }
